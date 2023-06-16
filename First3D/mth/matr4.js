@@ -175,7 +175,7 @@ class _mat4 {
 
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
-        r[i][j] = this.m[j][i];
+        r[i][j] = this.a[j][i];
       }
     }
     return mat4(r);

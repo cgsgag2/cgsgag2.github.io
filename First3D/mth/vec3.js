@@ -171,4 +171,5 @@ console.log(v1.divNum(2));
 console.log(v1.len());
 console.log(v3.normalize());
 */
+
 /* END OF 'vec3.js' FILE */
