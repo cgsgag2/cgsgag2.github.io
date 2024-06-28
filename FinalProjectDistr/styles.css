@@ -1,0 +1,267 @@
+html {
+    background: linear-gradient(to bottom right, #305170, #6DFC6B);
+    overflow: hidden
+}
+
+.projectName {
+    font-family: "Brush Script MT", cursive;
+    font-size: 90px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, #ffffff, #0033a0, #ff0000);
+    background-size: 200% auto;
+    background-clip: text;
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 13s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0%, 100%;
+    }
+    50% {
+        background-position: 100%, 0%;
+    }
+}
+
+.MapMainstyle {
+    display: flex;
+    justify-content: center;
+}
+
+.maplibregl-canvas {
+    border-radius: 50px;
+}
+
+.info-text {
+    display: flex;
+    justify-content: center;
+    animation-name: textinfoAnimation, textColourGradient;
+    animation-duration: 1s, 5s;
+    animation-timing-function: ease, linear;
+    animation-iteration-count: infinite, infinite;
+
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+
+    background: linear-gradient(90deg, #e933ff, #ffb400, #ff3333, #ffb400, #e933ff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes textColourGradient {
+    from {
+        background-position: 0% center
+    }
+
+    to {
+        background-position: 200% center
+    }
+}
+
+@keyframes textinfoAnimation {
+    0% {
+        transform: rotate(4.0deg);
+                background-position: 0% center
+    }
+    50% {
+        transform: rotate(-4.0deg);
+    }
+    100% {
+        transform: rotate(4.0deg);
+    }
+}
+
+.maplibregl-popup-content {
+    border-radius: 20px !important;
+    background-size: cover !important;
+    background-image: url("https://www.orthedu.ru/uploads/posts/2015-08/1440219999_flag-rossii.jpg") !important;
+    background-color: rgb(76, 120, 204) !important;
+}
+
+.popup-regions-main-info {
+    text-align: center;
+}
+
+.popup-regions-info {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.popup-regions-district {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.popup-regions-refs {
+    color: #ffff00;
+    font-style: oblique;
+    font-size: 13px;
+}
+
+.popup-regions-refs:active {
+    color: #0ad8e2;
+}
+
+.regions-info {
+    text-align: center;
+}
+
+#RegionInfo {
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 40px;
+
+    background: linear-gradient(to right, white 0%, white 33%, blue 33%, blue 66%, red 66%, red 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.regions-info-of-name {
+    font-weight: bold;
+    font-size: 25px;
+    color: #0C82F7;
+}
+
+.regions-info-of-value {
+    font-style: oblique;
+    font-weight: bold;
+    color: #6821F3;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.regions-info-table {
+    display: flex;
+    justify-content: center;
+}
+
+table .regions-info-population {
+    font-weight: bold;
+    color: #0000CD;
+    font-size: 20px;
+}
+
+.regions-info-population-info {
+    font-style: italic;
+    font-weight: bold;
+    color: #0000cd;
+    font-size: 17px;
+}
+
+.regions-info-population-data {
+    color: #ff0000;
+}
+
+.regions-ref-table {
+    display: flex;
+    justify-content: center;
+}
+
+.regions-ref-table table {
+    border: 3px solid rgb(184, 6, 6);
+    width: 50%;
+}
+
+.finalLink {
+    font-family: "Brush Script MT", cursive;
+    font-size: 40px;
+}
+
+.additCommon {
+    text-align: center;
+}
+
+.additInfo {
+    display: none;
+}
+
+.addit-info-name {
+    font-size: 20px;
+    color: #0000cd;
+}
+
+.addit-info-value {
+    font-style: oblique;
+    color: #6821F3;
+    font-size: 20px;
+}
+
+.button-showinfo {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 6px 14px;
+    position: relative;
+    color: #00BFFF;
+    border: 2px solid rgba(0, 0, 205, .4);
+    background: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.button-showinfo:before,
+.button-showinfo:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    box-sizing: border-box;
+}
+
+.button-showinfo:before {
+    bottom: 0;
+    left: 0;
+    border-left: 2px solid #FF4500;
+    border-top: 2px solid #FF4500;
+    transition: 0s ease opacity .8s, .2s ease width .4s, .2s ease height .6s;
+}
+
+.button-showinfo:after {
+    top: 0;
+    right: 0;
+    border-right: 2px solid #FF4500;
+    border-bottom: 2px solid #FF4500;
+    transition: 0s ease opacity .4s, .2s ease width, .2s ease height .2s;
+}
+
+.button-showinfo:hover:before,
+.button-showinfo:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.button-showinfo:hover:before {
+    transition: 0s ease opacity 0s, .2s ease height, .2s ease width .2s;
+}
+
+.button-showinfo:hover:after {
+    transition: 0s ease opacity .4s, .2s ease height .4s, .2s ease width .6s;
+}
+
+.button-showinfo:hover {
+    background: rgba(140, 87, 244, 0.2);
+    font-style: italic;
+    color: #0000FF;
+}
+
+.popup-admin-img {
+    border-radius: 50%;
+}
+
+.popup-admin-text {
+    color: #ffffff;
+    font-size: 15px;
+}
